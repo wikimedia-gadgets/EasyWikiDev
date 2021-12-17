@@ -4,6 +4,16 @@
 
 let hasRecievedFirstMessage = false;
 
+const currentSkin = mw.config.get("skin");
+
+const portletLinkSelector = {
+	'vector': 'a > span',
+	'monobook': 'a',
+	'timeless': 'a'
+}
+
+const currentPortletLinkSelector = portletLinkSelector[currentSkin];
+
 const currentPageLink = mw.util.addPortletLink(
     'p-personal',
     '#',
@@ -24,11 +34,11 @@ currentPageLink.onclick = () => {
 
 function stopDeveloperMode() {
     localStorage.setItem('EasyWikiDev', 'disabled');
-    currentPageLink.querySelector("a > span").innerText = "Develop";
+    currentPageLink.querySelector(currentPortletLinkSelector).innerText = "Develop";
 }
 
 function runDeveloperMode() {
-    currentPageLink.querySelector("a > span").innerText = "Stop Developing";
+    currentPageLink.querySelector(currentPortletLinkSelector).innerText = "Stop Developing";
 
     // Create the localstorage note
     localStorage.setItem('EasyWikiDev', 'enabled');
