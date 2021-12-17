@@ -1,0 +1,14 @@
+{
+  "name": "wikidev",
+  "version": "1.0.0",
+  "description": "A tool that opens a web server for MediaWiki gadget and tool development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ed6767",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "ws": "^8.3.0"
+  }
+}
