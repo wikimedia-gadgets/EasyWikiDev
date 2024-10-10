@@ -8,6 +8,7 @@ const currentSkin = mw.config.get("skin");
 
 const portletLinkSelector = {
 	'vector': 'a > span',
+    'vector-2022': 'a > span:nth-child(2)',
 	'monobook': 'a',
 	'timeless': 'a'
 }
@@ -65,7 +66,7 @@ function runDeveloperMode() {
 
                 // The message is the script.js file
                 // It's just a string, so we can just eval it
-                eval(e.data);
+                eval(e.data+"\n//# sourceURL=EasyWikiDevScript.js;");
             } else {
                 window.location.reload();
             }
